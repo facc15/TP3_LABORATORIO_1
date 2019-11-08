@@ -104,7 +104,6 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
                 {
                     printf("Alta exitosa!!!\n");
                     validation=1;
-                    system("pause");
                 }
 
             }

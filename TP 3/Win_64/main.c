@@ -27,7 +27,6 @@ int main()
     int validation;
     int validation2;
     int flag1=0;
-    int flag3=0;
     char exit='n';
     LinkedList* employeeList = ll_newLinkedList();
     do{
@@ -78,13 +77,19 @@ int main()
 
                 break;
             case 3:
-                if(controller_addEmployee(employeeList))
+                if(flag1)
                 {
-                    flag3=1;
+                     controller_addEmployee(employeeList);
+
+                }else
+                {
+
+                    printf("No hay datos cargados...!!\n");
                 }
+                system("pause");
                 break;
             case 4:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                     controller_editEmployee(employeeList);
                 }
@@ -95,7 +100,7 @@ int main()
                 system("pause");
                 break;
             case 5:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                     controller_removeEmployee(employeeList);
 
@@ -107,7 +112,7 @@ int main()
                 system("pause");
                 break;
             case 6:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                   controller_ListEmployee(employeeList);
                 }
@@ -119,7 +124,7 @@ int main()
                 system("pause");
                 break;
             case 7:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                     if(controller_sortEmployee(employeeList))
                     {
@@ -134,7 +139,7 @@ int main()
                 system("pause");
                 break;
             case 8:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                     validation=controller_saveAsText("data.csv",employeeList);
                     if(validation==1)
@@ -155,7 +160,7 @@ int main()
                 system("pause");
                 break;
             case 9:
-                if(flag1 || flag3)
+                if(flag1)
                 {
                     validation=controller_saveAsBinary("data.bin",employeeList);
                     if(validation == 1)
